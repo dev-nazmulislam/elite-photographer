@@ -13,7 +13,7 @@ import Singup from "./pages/Register/Singup";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />

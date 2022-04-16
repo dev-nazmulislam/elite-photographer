@@ -15,7 +15,7 @@ const Header = () => {
             to="/"
             className="fw-bold fs-4 text-secondary text-decoration-none"
           >
-            Elite Studio
+            Elite Photographer
           </Link>
         </div>
 

@@ -1,0 +1,80 @@
+[
+  {
+    "id": 101,
+    "title": "EDITABLE PHOTOGRAPHY",
+    "subTitle": "magazines, supplements, newspapers and websites",
+    "description": "Jamie Lau photographs for various magazines, supplements and websites, photographing front covers, features and reviews from portraits for YOU magazine and Waitrose magazine, to blind dates for Metropolitan - Eurostar's on-train publication, to travel features for EasyJet in-flight magazine. Working with writers and editors to ensure the imagery created supports and reflects the story and text written for the the feature. Commissions often illustrate factual stories therefore the integrity of the image is essential with the need to capture the essence of the scene and story being told, inline with the vision of the client.",
+    "photos": [
+      "https://i.ibb.co/55dgQpQ/banner-removebg-preview.png",
+      "https://i.ibb.co/2PzpCP5/brochures-removebg-preview.png",
+      "https://i.ibb.co/6sdQQHF/email-removebg-preview.png",
+      "https://i.ibb.co/7VWyBPh/Flyers-removebg-preview.png"
+    ],
+    "price": "1500"
+  },
+  {
+    "id": 102,
+    "title": "ADVERTISING PHOTOGRAPHY",
+    "subTitle": "national and global campaigns and creative agencies",
+    "description": "Recent campaigns have included food photography, video and animations for Rowse Honey, drinks photography for Absolut Vodka, Easter food campaign photography for Marks & Spencer, Breyers Ice Cream, Phillips Shavers, Waitrose Wine as well as portraits for The Department of International Trade. Offering high-quality Advertising photography, which is used to describe and sell a product, idea or lifestyle reinforcing brand awareness. Whilst solving visual challenges by working with teams in a calm and friendly way to achieve the ultimate image for the brief.",
+    "photos": [
+      "https://i.ibb.co/Mhbkd4b/camera.jpg",
+      "https://i.ibb.co/wB708xv/lighting.jpg",
+      "https://i.ibb.co/YDdZf3S/software.jpg",
+      "https://i.ibb.co/zr06xDP/transportation.jpg"
+    ],
+    "price": "800"
+  },
+  {
+    "id": 103,
+    "title": "SOCIAL MEDIA PHOTOGRAPHY",
+    "subTitle": "restaurants, hotels, private members clubs, resorts and spas, conference centres, sports and leisure venues",
+    "description": "Restaurant photographer Jamie Lau works with Restaurateurs, PR teams and Publishers. Capturing the atmospheres, cuisines, drinks, kitchens, interior & exterior settings as well as guests enjoying their experience and portraits of proprietors, chefs and staff. Jamie's clients include Michelin Star restaurants, Private Members Clubs with bars and restaurants, Pop-up restaurants, Gastro Pubs to Street Food stalls in London, Oxford, Brighton and further afield. Resulting in images that are inviting, which ultimately inspire customers to visit time and time again.",
+    "photos": [
+      "https://i.ibb.co/CvFjwq8/bar-restaurant-space-hotel-lobby-177930282.jpg",
+      "https://i.ibb.co/LZWySKb/Chef-1024x611.jpg",
+      "https://i.ibb.co/HV8MpSJ/istockphoto-1169549001-612x612.jpg",
+      "https://i.ibb.co/GTTyHbC/istockphoto-1283414667-170667a.jpg"
+    ],
+    "price": "700"
+  },
+  {
+    "id": 104,
+    "title": "EVENT PHOTOGRAPHY",
+    "subTitle": "food festivals, dinner evenings, product launches and pop-ups",
+    "description": "Event photographer Jamie Lau photographs various events, capturing the atmosphere and personalities of each occasion. From conference photography for Marks and Spencer, product launches, seminars to restaurant Pop-Ups and opening nights for bars throughout London, Oxford and Brighton.",
+    "photos": [
+      "https://i.ibb.co/0mVW6YM/8e078013204d0cc9876e9edbb1fd3f85.jpg",
+      "https://i.ibb.co/4gvbWvF/American-Heart-circle-of-RED-waltz-kenton.jpg",
+      "https://i.ibb.co/TKs023c/Event-Photography-Tips-and-Tricks-for-All-Photographers-Studio-Binder.jpg",
+      "https://i.ibb.co/q1m3bKC/las-vegas-conference-photography.jpg"
+    ],
+    "price": "800"
+  },
+  {
+    "id": 105,
+    "title": "CORPORATE PHOTOGRAPHY",
+    "subTitle": "headshots, team portraits, workplaces, conferences and events",
+    "description": "Corporate photography for amongst others, Marks & Spencer and Soho House, commissioned to take portraits of the people who make up these companies and visit workplaces to capture what makes working for these companies unique.",
+    "photos": [
+      "https://i.ibb.co/Kyrxbs5/5efa8805197c2f6013c79d17e66c01ac.jpg",
+      "https://i.ibb.co/cKqL6gW/d0de3f38b4a9265ed595a8bfb3646b42.jpg",
+      "https://i.ibb.co/jrxjN6h/group-portraits-Corporate-portraits-environmental-portrait-Studio-portrait-Tuckys-Photography-SIFA-2.jpg",
+      "https://i.ibb.co/HYjrcjK/Joe-Fotosiamo-960px-thumbnail.jpg"
+    ],
+    "price": "1000"
+  },
+  {
+    "id": 106,
+    "title": "FILMING AND EDITING PHOTOGRAPHY",
+    "subTitle": "cooking demonstrations, interviews, restaurants and products",
+    "description": "In addition to photography Studio Lau offers the filming, editing and production of videos. Depending on the scope of your project Jamie Lau can also work with a second cameraman and a sound engineer for larger productions.",
+    "photos": [
+      "https://i.ibb.co/zHNMqP2/2943-15.jpg",
+      "https://i.ibb.co/BrWTXfz/8326-Lfcx84-Csf-R8vzcx-EY6-1200-80.jpg",
+      "https://i.ibb.co/NLZjdg4/cover-kodak-portra-400-drh-home.jpg",
+      "https://i.ibb.co/tXv7Rgf/Lead-Photo-1024x679.jpg"
+    ],
+    "price": "1200"
+  }
+]

@@ -11,13 +11,13 @@ const Footer = () => {
   return (
     <footer className="container-fluid bg-light py-5 px-0 mt-5">
       <div className="container mx-auto">
-        <div className="row px-0">
+        <div className="row p-3">
           <div className="col-12 col-md-6 col-lg-4">
             <Link
               to="/"
               className="fw-bold fs-4 text-secondary text-decoration-none"
             >
-              Elite Studio
+              Elite Photographer
             </Link>
             <h6 className="d-flex align-items-center gap-3 mt-3">
               <ImLocation2 />
@@ -64,9 +64,9 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto mt-4">
+      <div className="mx-auto mt-4 p-3">
         <div className="text-center text-blue-700 pt-12 font-normal flex items-center justify-center">
-          All Rights Reserved By &copy; Elite Studio 2022
+          All Rights Reserved By &copy; Elite Photographer 2022
         </div>
       </div>
     </footer>
