@@ -40,12 +40,17 @@ const Singup = () => {
   };
 
   return (
-    <div className="w-50 mx-auto my-5">
+    <div className="w-50 mx-auto my-5 shadow-lg p-5">
       <h1 className="text-primary text-center">Please Register</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
+          <Form.Control
+            ref={emailRef}
+            type="email"
+            placeholder="Enter email"
+            required
+          />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
@@ -57,6 +62,7 @@ const Singup = () => {
             ref={passwordRef}
             type="password"
             placeholder="Password"
+            required
           />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicConfirmPassword">
@@ -65,6 +71,7 @@ const Singup = () => {
             ref={confirmPasswordRef}
             type="password"
             placeholder="Confirm Password"
+            required
           />
         </Form.Group>
 

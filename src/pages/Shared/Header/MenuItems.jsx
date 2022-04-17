@@ -11,7 +11,7 @@ const MenuItems = () => {
       <CustomLink to="/home">Home</CustomLink>
       <CustomLink to="/services">Services</CustomLink>
       <CustomLink to="/blog">Blog</CustomLink>
-      <CustomLink to="/about">About</CustomLink>
+      <CustomLink to="/about">About Me</CustomLink>
       {user ? (
         <button onClick={() => signOut(auth)} className="border-0 bg-light">
           Logout

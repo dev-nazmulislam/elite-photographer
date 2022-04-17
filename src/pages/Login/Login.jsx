@@ -14,16 +14,16 @@ const Login = () => {
   const passwordRef = useRef("");
   const navigate = useNavigate();
   const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
 
   const [signInWithEmailAndPassword, user, loadding] =
     useSignInWithEmailAndPassword(auth);
 
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
   if (loadding || sending) {
     return <Loading />;
   }
-
-  let from = location.state?.from?.pathname || "/";
 
   if (user) {
     navigate(from, { replace: true });
@@ -36,13 +36,26 @@ const Login = () => {
     signInWithEmailAndPassword(email, password);
   };
 
+  async function handlePasswordReset() {
+    const email = emailRef.current.value;
+    if (email) {
+      await sendPasswordResetEmail(email);
+      alert("Sent email");
+    }
+  }
+
   return (
-    <div className="w-50 mx-auto my-5">
+    <div className="w-50 mx-auto my-5 shadow-lg p-5">
       <h1 className="text-primary text-center">Please login</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
-          <Form.Control ref={emailRef} type="email" placeholder="Enter email" />
+          <Form.Control
+            ref={emailRef}
+            type="email"
+            placeholder="Enter email"
+            required
+          />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
@@ -54,6 +67,7 @@ const Login = () => {
             ref={passwordRef}
             type="password"
             placeholder="Password"
+            required
           />
         </Form.Group>
 
@@ -66,7 +80,7 @@ const Login = () => {
         </Button>
       </Form>
       <p className="pt-2">
-        New to genus car?{" "}
+        New to Elite Photographer?{" "}
         <Link to="/register" className="text-danger text-decoration-none">
           Pleasse Register.
         </Link>
@@ -74,10 +88,7 @@ const Login = () => {
       <p>
         Forget your password?{" "}
         <button
-          onClick={async () => {
-            await sendPasswordResetEmail(emailRef.current.value);
-            alert("Sent email");
-          }}
+          onClick={handlePasswordReset}
           className="text-primary btn btn-link"
         >
           Reset Password

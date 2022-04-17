@@ -7,6 +7,7 @@ import banner3 from "../../../assets/images/banner3.png";
 import "./Home.css";
 
 import Service from "../Service/Service";
+import Review from "../../Review/Review";
 
 const Home = () => {
   const [servicesData] = useService();
@@ -88,6 +89,9 @@ const Home = () => {
             <Service key={service.id} service={service} />
           ))}
         </div>
+      </section>
+      <section>
+        <Review />
       </section>
     </>
   );
