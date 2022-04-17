@@ -1,3 +1,4 @@
+import { signOut } from "firebase/auth";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
@@ -12,7 +13,9 @@ const MenuItems = () => {
       <CustomLink to="/blog">Blog</CustomLink>
       <CustomLink to="/about">About</CustomLink>
       {user ? (
-        <button className="border-0 bg-light">Logout</button>
+        <button onClick={() => signOut(auth)} className="border-0 bg-light">
+          Logout
+        </button>
       ) : (
         <CustomLink to="/login">Login</CustomLink>
       )}

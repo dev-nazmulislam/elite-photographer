@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
+import Loading from "../Shared/Loading/Loading";
 
 const Singup = () => {
   const emailRef = useRef("");
@@ -14,8 +15,12 @@ const Singup = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  const [createUserWithEmailAndPassword, user] =
+  const [createUserWithEmailAndPassword, user, loading] =
     useCreateUserWithEmailAndPassword(auth);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   if (user) {
     navigate(from, { replace: true });

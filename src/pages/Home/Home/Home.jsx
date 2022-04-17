@@ -10,7 +10,7 @@ import Service from "../Service/Service";
 
 const Home = () => {
   const [servicesData] = useService();
-  console.log(servicesData);
+
   return (
     <>
       <section>
@@ -37,8 +37,8 @@ const Home = () => {
             <div className="container d-flex flex-column-reverse flex-md-row justify-content-center align-items-center">
               <div className="p-2 half-width">
                 <h1 className="text-white">
-                  Best Editing Width{" "}
-                  <span className="text-warning">Photography</span>
+                  Get Best Width{" "}
+                  <span className="text-warning">Elite Photography</span>
                 </h1>
                 <p className="text-light">
                   We provides best photography services for many award winning

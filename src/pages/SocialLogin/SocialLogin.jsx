@@ -7,11 +7,24 @@ import {
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
+import Loading from "../Shared/Loading/Loading";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
-  const [signInWithGoogle] = useSignInWithGoogle(auth);
-  const [signInWithFacebook] = useSignInWithFacebook(auth);
-  const [signInWithGithub] = useSignInWithGithub(auth);
+  const [signInWithGoogle, user, loadding] = useSignInWithGoogle(auth);
+  const [signInWithFacebook, user1, loadding1] = useSignInWithFacebook(auth);
+  const [signInWithGithub, user2, loadding2] = useSignInWithGithub(auth);
+  const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
+
+  if (loadding || loadding1 || loadding2) {
+    return <Loading />;
+  }
+
+  if (user) {
+    navigate(from, { replace: true });
+  }
 
   return (
     <div>

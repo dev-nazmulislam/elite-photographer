@@ -6,6 +6,7 @@ import {
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
+import Loading from "../Shared/Loading/Loading";
 import SocialLogin from "../SocialLogin/SocialLogin";
 
 const Login = () => {
@@ -14,10 +15,13 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [signInWithEmailAndPassword, user] =
+  const [signInWithEmailAndPassword, user, loadding] =
     useSignInWithEmailAndPassword(auth);
 
-  const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  if (loadding || sending) {
+    return <Loading />;
+  }
 
   let from = location.state?.from?.pathname || "/";
 
@@ -74,7 +78,7 @@ const Login = () => {
             await sendPasswordResetEmail(emailRef.current.value);
             alert("Sent email");
           }}
-          className="text-primary border-0 bg-white"
+          className="text-primary btn btn-link"
         >
           Reset Password
         </button>

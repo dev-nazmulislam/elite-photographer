@@ -1,9 +1,14 @@
 import React from "react";
+import useService from "../../../Hooks/useService";
+import Service from "../Service/Service";
 
 const Services = () => {
+  const [servicesData] = useService();
   return (
-    <div>
-      <h1>This Service Page</h1>
+    <div className="container">
+      {servicesData.map((service) => (
+        <Service key={service.id} service={service} />
+      ))}
     </div>
   );
 };
