@@ -4,7 +4,12 @@ const useService = () => {
   const [servicesData, setServicesData] = useState([]);
 
   useEffect(() => {
-    fetch("services-data.json")
+    fetch(`../servicesData.json`, {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
       .then((res) => res.json())
       .then((data) => setServicesData(data));
   }, []);

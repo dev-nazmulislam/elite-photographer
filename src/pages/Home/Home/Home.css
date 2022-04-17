@@ -5,8 +5,10 @@
   width: 50%;
 }
 .asid-menu {
+  position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  height: 92vh;
+  top: 40px;
 }
 .asid-menu a {
   font-size: 18px;
@@ -16,5 +18,9 @@
 @media only screen and (max-width: 765px) {
   .half-width {
     width: 100%;
+  }
+  .asid-menu {
+    position: static;
+    height: 100%;
   }
 }

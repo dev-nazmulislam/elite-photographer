@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
-import "./Header.css";
 import MenuItems from "./MenuItems";
+import "./Header.css";
 
 const Header = () => {
   const [open, setOpen] = useState(true);

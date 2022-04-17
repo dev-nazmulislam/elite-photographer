@@ -14,11 +14,11 @@ const Service = ({ service }) => {
         print.
       </p>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-        {photos.map((photo, index) => (
+        {photos.map((photo, i) => (
           <div className="col">
             <img
               className="w-100"
-              key={index}
+              key={i}
               style={{ width: "200px" }}
               src={photo}
               alt=""
@@ -30,7 +30,7 @@ const Service = ({ service }) => {
         Hourly Rate <span className="text-danger">{price}.00</span> Tk
       </p>
       <button
-        onClick={() => navigate(`/checkout/${id}`)}
+        onClick={() => navigate(`/service/${id}`)}
         className="btn btn-primary"
       >
         Book Now

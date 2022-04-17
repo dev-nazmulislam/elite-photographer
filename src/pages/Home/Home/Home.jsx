@@ -1,19 +1,18 @@
 import React from "react";
 import { Carousel, Nav } from "react-bootstrap";
-import useService from "../../../Hooks/useService";
 import banner1 from "../../../assets/images/banner1.png";
 import banner2 from "../../../assets/images/banner2.png";
 import banner3 from "../../../assets/images/banner3.png";
-import "./Home.css";
-
 import Service from "../Service/Service";
 import Review from "../../Review/Review";
+import useService from "../../../Hooks/useService";
+import "./Home.css";
 
 const Home = () => {
   const [servicesData] = useService();
 
   return (
-    <>
+    <div className="">
       <section>
         <Carousel className="carousel-bg">
           <Carousel.Item>
@@ -72,8 +71,8 @@ const Home = () => {
           </Carousel.Item>
         </Carousel>
       </section>
-      <section className="row d-flex mx-0 my-3">
-        <div className="col-12 col-md-3 shadow">
+      <section className="row px-0 mx-0">
+        <div className="col-12 col-md-3 shadow asid-menu ">
           <h3 className="text-primary mt-4 p-3">My Services</h3>
           {servicesData.map((service) => (
             <div key={service.id}>
@@ -93,7 +92,7 @@ const Home = () => {
       <section>
         <Review />
       </section>
-    </>
+    </div>
   );
 };
 
