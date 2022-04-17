@@ -5,7 +5,7 @@ const Service = ({ service }) => {
   const navigate = useNavigate();
   const { id, title, subTitle, description, price, photos } = service;
   return (
-    <div id={title} className="shadow p-4">
+    <div id={title} className="shadow p-4 cart-container">
       <h3 className="text-secondary">{title}</h3>
       <p className="mb-4">{subTitle}</p>
       <p className="mb-4">{description}</p>
@@ -15,10 +15,9 @@ const Service = ({ service }) => {
       </p>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
         {photos.map((photo, i) => (
-          <div className="col">
+          <div key={i} className="col">
             <img
               className="w-100"
-              key={i}
               style={{ width: "200px" }}
               src={photo}
               alt=""

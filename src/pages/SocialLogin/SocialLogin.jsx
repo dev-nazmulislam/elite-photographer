@@ -11,12 +11,21 @@ import Loading from "../Shared/Loading/Loading";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const SocialLogin = () => {
-  const [signInWithGoogle, user, loadding] = useSignInWithGoogle(auth);
-  const [signInWithFacebook, user1, loadding1] = useSignInWithFacebook(auth);
-  const [signInWithGithub, user2, loadding2] = useSignInWithGithub(auth);
+  const [signInWithGoogle, user, loadding, error] = useSignInWithGoogle(auth);
+  const [signInWithFacebook, user1, loadding1, error1] =
+    useSignInWithFacebook(auth);
+  const [signInWithGithub, user2, loadding2, error2] =
+    useSignInWithGithub(auth);
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
+
+  let element;
+  if (error || error1 || error2) {
+    element = <p className="text-danger">{error.message}</p>;
+  } else {
+    element = "";
+  }
 
   if (loadding || loadding1 || loadding2) {
     return <Loading />;
@@ -33,6 +42,7 @@ const SocialLogin = () => {
         <p className="px-3">or</p>
         <div style={{ height: "2px" }} className="w-50 mt-2 bg-primary"></div>
       </div>
+      {element}
       <div>
         <button
           onClick={() => signInWithGoogle()}

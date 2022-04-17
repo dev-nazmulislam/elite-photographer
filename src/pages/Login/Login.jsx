@@ -16,10 +16,17 @@ const Login = () => {
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  const [signInWithEmailAndPassword, user, loadding] =
+  const [signInWithEmailAndPassword, user, loadding, error] =
     useSignInWithEmailAndPassword(auth);
 
-  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  const [sendPasswordResetEmail, sending, error2] =
+    useSendPasswordResetEmail(auth);
+  let element;
+  if (error || error2) {
+    element = <p className="text-danger">{error.message}</p>;
+  } else {
+    element = "";
+  }
 
   if (loadding || sending) {
     return <Loading />;
@@ -41,6 +48,8 @@ const Login = () => {
     if (email) {
       await sendPasswordResetEmail(email);
       alert("Sent email");
+    } else {
+      alert("Please provide a email.");
     }
   }
 
@@ -79,6 +88,7 @@ const Login = () => {
           Login
         </Button>
       </Form>
+      {element}
       <p className="pt-2">
         New to Elite Photographer?{" "}
         <Link to="/register" className="text-danger text-decoration-none">

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
@@ -10,16 +10,24 @@ const Singup = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const confirmPasswordRef = useRef("");
+  const [error, serError] = useState("");
 
   const navigate = useNavigate();
   const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  const [createUserWithEmailAndPassword, user, loading] =
+  const [createUserWithEmailAndPassword, user, loading, error2] =
     useCreateUserWithEmailAndPassword(auth);
 
   if (loading) {
     return <Loading />;
+  }
+
+  let element;
+  if (error || error2) {
+    element = <p className="text-danger">{error}</p>;
+  } else {
+    element = "";
   }
 
   if (user) {
@@ -33,9 +41,10 @@ const Singup = () => {
     const confirmPassword = confirmPasswordRef.current.value;
 
     if (password !== confirmPassword) {
-      return;
+      return serError("Password Do not match");
     } else {
       createUserWithEmailAndPassword(email, password);
+      serError("");
     }
   };
 
@@ -83,6 +92,7 @@ const Singup = () => {
           Register
         </Button>
       </Form>
+      {element}
       <p className="py-2">
         Already have an account?{" "}
         <Link to="/login" className="text-danger text-decoration-none">
