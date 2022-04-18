@@ -1,11 +1,10 @@
 import React from "react";
-import { FaLinkedinIn } from "react-icons/fa";
 import { CgMail } from "react-icons/cg";
 import { IoMdCall } from "react-icons/io";
-import { ImFacebook, ImLocation2 } from "react-icons/im";
-import { AiOutlineTwitter, AiFillGithub, AiFillYoutube } from "react-icons/ai";
+import { ImLocation2 } from "react-icons/im";
 import { Link } from "react-router-dom";
 import MenuItems from "../Header/MenuItems";
+import SocialConnect from "../SocialConnent/SocialConnect";
 
 const Footer = () => {
   return (
@@ -33,26 +32,9 @@ const Footer = () => {
             </h6>
             <h6>(Available : Sat - Thu, 10:00 AM to 7:00 PM)</h6>
           </div>
-
           <div className=" col-12 col-md-6 col-lg-4 text-center mt-5">
             <MenuItems />
-            <div className=" d-flex align-items-center justify-content-center gap-2 mt-3">
-              <a href="https://github.com/dev-nazmulislam">
-                <ImFacebook className="fs-3" />
-              </a>
-              <a href="https://github.com/dev-nazmulislam">
-                <AiOutlineTwitter className="fs-3" />
-              </a>
-              <a href="https://github.com/dev-nazmulislam">
-                <AiFillGithub className="fs-3" />
-              </a>
-              <a href="https://github.com/dev-nazmulislam">
-                <FaLinkedinIn className="fs-3" />
-              </a>
-              <a href="https://github.com/dev-nazmulislam">
-                <AiFillYoutube className="fs-3" />
-              </a>
-            </div>
+            <SocialConnect />
           </div>
 
           <div className="d-none d-lg-block col-lg-4 mt-5">
