@@ -1,7 +1,10 @@
 import React, { useRef, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import {
+  useCreateUserWithEmailAndPassword,
+  useSendEmailVerification,
+} from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import SocialLogin from "../SocialLogin/SocialLogin";
 import Loading from "../Shared/Loading/Loading";
@@ -10,7 +13,7 @@ const Singup = () => {
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const confirmPasswordRef = useRef("");
-  const [error, serError] = useState("");
+  const [error, setError] = useState("");
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -19,12 +22,15 @@ const Singup = () => {
   const [createUserWithEmailAndPassword, user, loading, error2] =
     useCreateUserWithEmailAndPassword(auth);
 
-  if (loading) {
+  const [sendEmailVerification, sending, error3] =
+    useSendEmailVerification(auth);
+
+  if (loading || sending) {
     return <Loading />;
   }
 
   let element;
-  if (error || error2) {
+  if (error || error2 || error3) {
     element = <p className="text-danger">{error}</p>;
   } else {
     element = "";
@@ -34,17 +40,19 @@ const Singup = () => {
     navigate(from, { replace: true });
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     const confirmPassword = confirmPasswordRef.current.value;
 
     if (password !== confirmPassword) {
-      return serError("Password Do not match");
+      return setError("Password Do not match");
     } else {
+      await sendEmailVerification();
+      alert(`Verification code sent in ${email} Please Check your Email.`);
       createUserWithEmailAndPassword(email, password);
-      serError("");
+      setError("");
     }
   };
 
