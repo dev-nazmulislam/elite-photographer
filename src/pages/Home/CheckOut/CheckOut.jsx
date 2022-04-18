@@ -12,7 +12,6 @@ const CheckOut = () => {
   const navigate = useNavigate();
 
   const service = servicesData.find((service) => service.id == serviceId);
-  console.log(service);
 
   const success = () => toast.success("Confirm Order Please Check Your Email.");
   const handleOrder = () => {
@@ -53,7 +52,7 @@ const CheckOut = () => {
       )}
 
       <button onClick={handleOrder} className="btn btn-primary d-block mx-auto">
-        Confirm Order
+        Hire me for {service?.title}
       </button>
       <Toaster position="top-center" reverseOrder={false} />
     </div>
