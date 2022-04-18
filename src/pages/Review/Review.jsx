@@ -19,7 +19,7 @@ const Review = () => {
   };
 
   return (
-    <div id="review" className="container">
+    <div className="container">
       <div className="my-5">
         <hr />
         <hr />

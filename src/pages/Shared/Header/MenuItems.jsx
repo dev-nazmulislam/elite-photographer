@@ -10,9 +10,6 @@ const MenuItems = () => {
     <>
       <CustomLink to="/home">Home</CustomLink>
       <CustomLink to="/services">Services</CustomLink>
-      <a className="text-decoration-none text-black" href="/home#review">
-        Review
-      </a>
       <CustomLink to="/blog">Blog</CustomLink>
       <CustomLink to="/about">About Me</CustomLink>
       {user ? (

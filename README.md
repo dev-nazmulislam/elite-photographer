@@ -19,6 +19,7 @@
 
 - React Router
 - Nasted Route
+- Dynamic Route
 - Custom Hook
 - Custom Link
 - Destructuring
@@ -35,3 +36,10 @@
 7.  Login
 8.  LogOut
 9.  Not Found
+
+# Apply Authentication
+
+- Email/Password
+- Google
+- Facebook
+- gitHub
